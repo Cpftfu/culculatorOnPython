@@ -13,7 +13,11 @@ def umnogenie(a3, b3):
 
 #деленька(4)
 def delenie(a4, b4):
-    return(a4 / b4)
+    if b4 == 0 :
+        print("на ноль делить же нельзя!")
+        return 1
+    else : 
+        return(a4 / b4)
 
 #возведенька в степень(5)
 def stepen(a5, b5):
@@ -59,15 +63,18 @@ while (d):
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
     menu = input("Выберите действие которое выхотите выполнить: ")
+
     if int(menu) == 1:
         result1 = slogenie(a1=int(input("Введите первое число: ")),
-                          b1=int(input("Введите второе число:  ")))
+                       b1=int(input("Введите второе число:  ")))
         print("сумма чисел равняется :", result1)
+
 
     elif int(menu) == 2:
         result2 = vichitanie(a2=int(input("Введите первое число: ")),
                               b2=int(input("Введите второе число: ")))
         print("разность чисел равняется :", result2)
+
 
     elif int(menu) == 3:
         result3 = umnogenie(a3=int(input("Введите первое число: ")),
@@ -79,8 +86,9 @@ while (d):
         result4 = delenie(a4=int(input("Введите первое число: ")),
                            b4=int(input("Введите второе число: ")))
         print("деление чисел равняется :", result4)
+       
 
-
+        
     elif int(menu) == 5:
         result5 = stepen(a5=int(input("Введите число: ")),
                           b5=int(input("Введие степень в которую хотите возвести число: ")))
@@ -95,6 +103,7 @@ while (d):
     elif int(menu) == 7:
         result7 = factorial(a7=int(input("Введите число: ")))
         print("факториал из числа равняется :", result7) 
+
 
     elif int(menu) == 8:
         result8 = sinus(a8=int(input("Введите число: ")))
@@ -114,9 +123,11 @@ while (d):
     elif int(menu) < 1 or int(menu) > 10:
         print("Так нельзя, вы чево")
 
+
     go_again = input("Хотите выполнить еще действие? (да/нет): ")
     if (go_again.lower()=="нет"):
         d = False
         print("пака-пака")
     else:
         continue
+      
